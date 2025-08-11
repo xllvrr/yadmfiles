@@ -8,6 +8,7 @@ set $secondaryscreen DP-3
 # Output configuration
 output DP-2 mode 1920x1080 pos 0 0
 output DP-3 mode 1680x1050 pos 1920 0
+output "*" bg $HOME/.config/wallpaper/cow.png fill
 
 # Input configuration
 input "1390:268:ELECOM_TrackBall_Mouse_HUGE_TrackBall" {
@@ -120,7 +121,7 @@ for_window [title="Steam - Update News"] floating enable
 default_border pixel 3
 titlebar_border_thickness 0
 titlebar_padding 0
-client.focused #0D5C26 #0D5C26 #000000
+client.focused #06cf42 #06cf42 #000000
 
 # Workspace assignments
 workspace 1 output $primaryscreen
