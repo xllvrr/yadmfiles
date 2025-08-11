@@ -1,0 +1,38 @@
+* {
+    font-family: "Source Sans Pro", "FontAwesome 6 Free";
+    font-size: 18px;
+    font-weight: bold;
+    color: #c5c8c6;
+    border: none;
+}
+
+window#waybar {
+    color: rgba(53, 185, 171, 1);
+    background-color: rgba(11, 48, 23, 0.4);
+    border: 3px solid #0D5C26;
+    border-radius: 10px;
+}
+
+.modules-left {
+    margin: 5px;
+}
+
+.modules-right {
+    margin: 5px;
+}
+
+#workspaces button label {
+    font-family: "Font Awesome 6 Free Solid", "Font Awesome 6 Free Brands", "Font Awesome 6 Free Regular";
+    font-size: 22px;
+    transition: all 100ms ease-out;
+}
+
+#workspaces button.active label {
+    font-family: "Font Awesome 6 Free Solid", "Font Awesome 6 Free Brands", "Font Awesome 6 Free Regular";
+    color: #f0c674;
+    transition: all 100ms ease-out;
+}
+
+#bluetooth {
+    font-size: 20px;
+}
