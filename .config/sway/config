@@ -120,6 +120,7 @@ for_window [title="Steam - Update News"] floating enable
 default_border pixel 3
 titlebar_border_thickness 0
 titlebar_padding 0
+client.focused #0D5C26 #0D5C26 #000000
 
 # Workspace assignments
 workspace 1 output $primaryscreen
