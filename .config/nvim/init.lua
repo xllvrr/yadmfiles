@@ -19,25 +19,36 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- Basic Neovim options
 now(function()
+  vim.cmd.colorscheme("minispring")
+
   vim.g.mapleader = ' '
   vim.g.maplocalleader = '\\'
 
+  vim.opt.clipboard = 'unnamedplus'
+
   vim.opt.number = true
   vim.opt.relativenumber = true
+
   vim.opt.expandtab = true
   vim.opt.shiftwidth = 2
   vim.opt.tabstop = 2
   vim.opt.softtabstop = 2
   vim.opt.smartindent = true
+
   vim.opt.wrap = false
+
   vim.opt.ignorecase = true
   vim.opt.smartcase = true
+
   vim.opt.hlsearch = false
   vim.opt.incsearch = true
+
   vim.opt.termguicolors = true
+
   vim.opt.undofile = true
   vim.opt.backup = false
   vim.opt.swapfile = false
+
   vim.opt.splitbelow = true
   vim.opt.splitright = true
 end)
@@ -159,7 +170,28 @@ later(function()
     snippets = { preset = 'mini_snippets' },
     sources = {
       default = { 'lsp', 'buffer', 'snippets', 'path' },
-    }
+    },
+    keymap = {
+      ["<Tab>"] = {
+        function(cmp)
+          local has_words_before = function()
+            local col = vim.api.nvim_win_get_cursor(0)[2]
+            if col == 0 then
+              return false
+            end
+            return vim.api.nvim_get_current_line():sub(col, col):match("%s") == nil
+          end
+          if has_words_before() then
+            return cmp.select_next()
+          end
+        end,
+        "snippet_forward",
+        "fallback",
+      },
+
+      ["<S-Tab>"] = { "insert_prev", "snippet_backward", "fallback" },
+      ["<CR>"] = { "select_and_accept", "fallback" },
+    },
   })
 end)
 
