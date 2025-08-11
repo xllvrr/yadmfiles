@@ -198,7 +198,8 @@ end)
 -- Key mappings
 later(function()
   -- File explorer
-  vim.keymap.set('n', '<leader>e', function() require('mini.files').open() end, { desc = 'Open file explorer' })
+  vim.keymap.set('n', '<leader>E', function() require('mini.files').open() end, { desc = 'Open file explorer at root' })
+  vim.keymap.set('n', '<leader>e', function() require('mini.files').open(vim.api.nvim_buf_get_name(0)) end, { desc = 'Open file explorer in current direction' })
 
   -- Mini.pick mappings
   vim.keymap.set('n', '<leader>ff', function() require('mini.pick').builtin.files() end, { desc = 'Find files' })
