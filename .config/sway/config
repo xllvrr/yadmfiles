@@ -93,19 +93,21 @@ focus_follows_mouse yes
 
 # Startup applications
 exec_always mako
+
 exec discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
+exec firefox
+
 exec syncthing
-exec kitty --detach musikcube
+
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
+
 exec bluetoothctl trust 28:D0:EA:94:0C:A9
 exec bluetoothctl power on
 exec bluetoothctl connect 28:D0:EA:94:0C:A9
+
 exec fcitx5 -d --replace
 exec fcitx5-remote -r
-exec ssh-add $HOME/.ssh/github_rsa
-exec firefox
-exec safeeyes
 
 # Workspace back and forth
 workspace_auto_back_and_forth yes
@@ -121,7 +123,10 @@ for_window [title="Steam - Update News"] floating enable
 default_border pixel 3
 titlebar_border_thickness 0
 titlebar_padding 0
-client.focused #06cf42 #06cf42 #000000
+
+client.focused #0AF532 #0AF532 #000000
+client.focused_inactive #0D5C26 #0D5C26 #000000
+client.unfocused #0D5C26 #0D5C26 #000000
 
 # Workspace assignments
 workspace 1 output $primaryscreen
