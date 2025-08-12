@@ -98,6 +98,7 @@ exec discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enabl
 exec firefox
 
 exec syncthing
+exec ssh-add $HOME/.ssh/github_rsa
 
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
