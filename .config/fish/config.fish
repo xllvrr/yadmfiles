@@ -13,6 +13,9 @@ end
 
 # Set environment variables
 set -gx EDITOR nvim
+set -gx GTK_IM_MODULE fcitx
+set -gx QT_IM_MODULE fcitx
+set -gx XMODIFIERS @im=fcitx
 set -Ux WLR_RENDERER vulkan
 
 # Add path
