@@ -2,7 +2,7 @@
     font-family: "Source Sans Pro", "FontAwesome 6 Free";
     font-size: 18px;
     font-weight: bold;
-    color: #c5c8c6;
+    color: #0AF532;
     border: none;
 }
 
@@ -31,6 +31,10 @@ window#waybar {
     font-family: "Font Awesome 6 Free Solid", "Font Awesome 6 Free Brands", "Font Awesome 6 Free Regular";
     color: #f0c674;
     transition: all 100ms ease-out;
+}
+
+#tray * {
+    background-color: rgba(11, 48, 23, 0.4);
 }
 
 #bluetooth {
